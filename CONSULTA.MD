@@ -156,3 +156,51 @@ En otras palabras, una promesa es como un compromiso que hace JavaScript.
 * **5.3.** Tomando como base el código que creaste para la pregunta 4.3, reescríbelo utilizando la sintaxis `async/await` y un bloque `try...catch` para manejar tanto el caso de éxito como el de error.
 
 **[ESPACIO PARA TU RESPUESTA 5]**
+5.1  Las palabras clave async y await son una forma moderna y simplificada de trabajar con promesas (Promises) en JavaScript.
+Fueron introducidas para hacer que el código asíncrono se vea y se comporte como código síncrono, facilitando su lectura y mantenimiento.Con async/await, el mismo flujo se escribe de manera más natural y legible, como si fuera un código paso a paso
+5.2La expresión “azúcar sintáctico” significa que async/await no crea una nueva forma de manejar la asincronía, sino que simplemente hace más agradable y sencilla la sintaxis para trabajar con promesas existentes.
+
+En otras palabras:
+
+async/await no cambia cómo funcionan las Promesas internamente, solo hace que escribirlas sea más limpio, parecido a código tradicional.
+
+function obtenerUsuario() {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve({ id: 1, nombre: "Ana" }), 1000);
+  });
+}
+
+function obtenerPedidos(usuario) {
+  return new Promise((resolve, reject) => {
+    const exito = true; // Cambia a false para simular un error
+    setTimeout(() => {
+      if (exito) {
+        resolve(["Pedido 1", "Pedido 2"]);
+      } else {
+        reject("Error al obtener pedidos ");
+      }
+    }, 1000);
+  });
+}
+
+function mostrarPedidos(pedidos) {
+  console.log("Pedidos del usuario:", pedidos);
+}
+
+async function manejarPedidos() {
+  try {
+    const usuario = await obtenerUsuario();
+    console.log("Usuario obtenido:", usuario.nombre);
+
+    const pedidos = await obtenerPedidos(usuario);
+    mostrarPedidos(pedidos);
+
+    console.log("Proceso completado con éxito.");
+  } catch (error) {
+    console.error(" Se produjo un error:", error);
+  } finally {
+    console.log("Fin del proceso.");
+  }
+}
+
+manejarPedidos();
