@@ -132,6 +132,22 @@ Documentar y compartir pruebas entre equipo
 * **4.2.** ¿Cómo resuelven las promesas el problema del "Callback Hell"? Explica el papel que juegan los métodos `.then()`, `.catch()` y `.finally()` en el manejo de una promesa.
 
 **[ESPACIO PARA TU RESPUESTA 4]**
+4.1Una Promesa (Promise) en JavaScript es un objeto que representa la eventual finalización (o el fallo) de una operación asíncrona y su valor resultante.
+En otras palabras, una promesa es como un compromiso que hace JavaScript.
+| Estado                     | Descripción                                        | Ejemplo del mundo real                                     |
+| -------------------------- | -------------------------------------------------- | ---------------------------------------------------------- |
+| **`pending` (pendiente)**  | La promesa aún no se ha resuelto ni rechazado.     | El pedido de pizza está siendo preparado.                  |
+| **`fulfilled` (cumplida)** | La operación fue exitosa y se obtuvo un resultado. | La pizza llegó correctamente a tu casa.                    |
+| **`rejected` (rechazada)** | Ocurrió un error en la operación.                  | La pizzería se quedó sin ingredientes y cancela el pedido. |
+4.2. 
+| Concepto                | Descripción                                                                           |
+| ----------------------- | ------------------------------------------------------------------------------------- |
+| **Promise**             | Objeto que representa el resultado futuro (éxito o error) de una operación asíncrona. |
+| **Estados**             | `pending`, `fulfilled`, `rejected`.                                                   |
+| **`.then()`**           | Ejecuta código si la promesa se resuelve correctamente.                               |
+| **`.catch()`**          | Captura errores o rechazos de la promesa.                                             |
+| **`.finally()`**        | Se ejecuta siempre, sin importar el resultado.                                        |
+| **Beneficio principal** | Reemplaza los callbacks anidados con una sintaxis más legible y manejable
 --
 ### Pregunta 5: Async/Await (Azúcar sintáctico)
 
