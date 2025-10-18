@@ -73,6 +73,56 @@ La indentación excesiva hace que el código sea difícil de seguir visualmente,
     * **Codigos (500-599):** ¿Cuál es su propósito general?, ¿Qué indican este tipo de respuestas?
 
 **[ESPACIO PARA TU RESPUESTA 3]**
+3.1 Una API (Application Programming Interface) es un conjunto de reglas y herramientas que permiten que dos programas se comuniquen entre sí.Una API es como un mesero en un restaurante.
+Tú (el cliente) haces un pedido (una solicitud), el mesero (la API) lleva tu pedido a la cocina (el servidor), y luego te trae de vuelta lo que pediste (la respuesta).
+3.2tipo de API que sigue un conjunto de principios y reglas para permitir la comunicación entre cliente y servidor a través de protocolo HTTP, el mismo que usan las páginas web.
+
+Características principales de una API REST:
+
+Usa métodos HTTP estándar:
+
+GET → Obtener información
+
+POST → Crear un nuevo recurso
+
+PUT → Actualizar un recurso existente
+
+DELETE → Eliminar un recurso
+
+Es stateless (sin estado):
+Cada solicitud contiene toda la información necesaria. El servidor no recuerda lo que el cliente hizo antes.
+
+Usa URLs claras y organizadas:
+Cada dirección web identifica un recurso, por ejemplo:
+https://api.ejemplo.com/usuarios/5 → representa el usuario con ID 5.
+
+Devuelve datos en formato estándar:
+Generalmente JSON, fácil de leer por humanos y procesar por máquinas.
+
+3.3 Un endpoint es una dirección específica (URL) dentro de una API donde se puede acceder o manipular un recurso concreto.
+https://rickandmortyapi.com/	Dominio principal (el servidor donde vive la API)
+/api/character/	Ruta base del recurso (endpoint general para personajes)
+2	Identificador del personaje específico.
+ este seria el endpoint     /api/character/2 
+3.4 Herramientas como Postman o Thunder Client son programas que sirven para probar, analizar y documentar APIs.
+
+Permiten al desarrollador enviar solicitudes HTTP (GET, POST, PUT, DELETE) y ver las respuestas del servidor sin necesidad de crear código.funciones:Probar endpoints de una API.
+
+Enviar datos (JSON, formularios, etc.).
+
+Revisar respuestas y códigos de estado HTTP.
+
+Simular diferentes escenarios (errores, autenticaciones, etc.).
+
+Documentar y compartir pruebas entre equipo
+3.5
+| Familia | Tipo de respuesta  | Ejemplo                   | Significado                              |
+| ------- | ------------------ | ------------------------- | ---------------------------------------- |
+| 100–199 | Informativa        | 100 Continue              | El servidor está recibiendo la solicitud |
+| 200–299 | Éxito              | 200 OK                    | Solicitud completada correctamente       |
+| 300–399 | Redirección        | 301 Moved Permanently     | El recurso cambió de ubicación           |
+| 400–499 | Error del cliente  | 404 Not Found             | El recurso no existe                     |
+| 500–599 | Error del servidor | 500 Internal Server Error | Fallo interno del servidor               |
 
 ---
 
@@ -82,9 +132,7 @@ La indentación excesiva hace que el código sea difícil de seguir visualmente,
 * **4.2.** ¿Cómo resuelven las promesas el problema del "Callback Hell"? Explica el papel que juegan los métodos `.then()`, `.catch()` y `.finally()` en el manejo de una promesa.
 
 **[ESPACIO PARA TU RESPUESTA 4]**
-
----
-
+--
 ### Pregunta 5: Async/Await (Azúcar sintáctico)
 
 * **5.1.** ¿Qué son las palabras clave **`async`** y **`await`**? ¿Qué problema vienen a solucionar o mejorar en comparación con el uso de `.then()` y `.catch()`?
