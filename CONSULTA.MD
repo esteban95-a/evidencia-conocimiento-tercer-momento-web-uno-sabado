@@ -8,7 +8,24 @@
 * **1.2.** ¿Qué significa el famoso error `Maximum call stack size exceeded` y cómo podrías provocarlo intencionalmente con un pequeño y simple fragmento de código? (Incluye el código de ejemplo).
 
 **[ESPACIO PARA TU RESPUESTA 1]**
+1.1 El Call Stack (pila de llamadas) es una estructura de datos tipo pila (LIFO: Last In, First Out) que utiliza el motor de JavaScript para registrar el orden en el que se ejecutan las funciones.
 
+Cada vez que se invoca una función, esta se coloca (“empuja”) en la parte superior del stack.
+Cuando la función termina su ejecución, se retira (“saca”) del stack.
+De esta manera, el intérprete sabe en qué punto del programa debe continuar una vez que una función finaliza.
+analogia de una cafeteria :
+Un cliente pide un café latte, así que comienzas a prepararlo (lo colocas en la pila de tareas).
+
+En medio de eso, otro cliente pide un capuchino, y decides atenderlo primero (lo pones encima de la pila).
+
+Cuando terminas el capuchino, lo entregas (lo sacas del stack) y retomas el café latte.
+1.2 Este error ocurre cuando el Call Stack se llena más allá de su capacidad.
+Cada llamada de función ocupa un espacio en la pila, y si una función se llama a sí misma indefinidamente (recursión infinita) sin una condición de salida, la pila nunca se vacía.
+Cuando esto sucede, el motor de JavaScript lanza el error:
+function repetitiva() {
+  repetitiva();
+}
+repetitiva();
 ---
 
 ### Pregunta 2: Los Callbacks
