@@ -34,6 +34,28 @@ repetitiva();
 * **2.2.** Investiga en internet sobre el término **"Callback Hell"** o **"Pyramid of Doom"**. Pega un ejemplo de código que lo ilustre y explica por qué esa estructura es problemática para la legibilidad y el mantenimiento del código a largo plazo.
 
 **[ESPACIO PARA TU RESPUESTA 2]**
+2.1 Un callback es una función que se pasa como argumento a otra función, y que se ejecuta después de que la función principal haya terminado su tarea.
+se utilizaban para :
+Leer archivos desde el disco.
+Consultar datos en una API.
+Esperar una respuesta del servidor.
+2.2
+obtenerUsuario(1, function (usuario) {
+  obtenerPosts(usuario.id, function (posts) {
+    obtenerComentarios(posts[0].id, function (comentarios) {
+      guardarEnBD(comentarios, function (resultado) {
+        console.log("Datos guardados correctamente:", resultado);
+      }, function (error) {
+        console.error("Error al guardar en BD:", error);
+      });
+    }, function (error) {
+      console.error("Error al obtener comentarios:", error);
+    });
+  }, function (error) {
+    console.error("Error al obtener posts:", error);
+  });
+});
+La indentación excesiva hace que el código sea difícil de seguir visualmente,Agregar, cambiar o eliminar una llamada asíncrona puede romper el flujo,Cada nivel requiere su propio bloque de manejo de errores,Las funciones quedan dependientes unas de otras en un mismo bloque.
 
 ---
 
